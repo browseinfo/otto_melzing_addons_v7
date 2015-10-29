@@ -1,0 +1,113 @@
+<html>
+<head>
+    <style type="text/css">
+       ${
+		}
+   </style>
+</head>
+%for o in objects :
+<body>
+		<table class="basic_table" width="100%">
+			<thead>
+                <tr>
+                    <th style="text-align:left;" ><b>Inventory Report</b></th>
+                </tr>
+            </thead>
+		</table>
+
+		<table class="basic_table" width="100%">
+			<thead>
+                <tr>
+                    <th style="text-align:right;" >Date: ${call_date(o)}</th>
+                </tr>
+            </thead>
+		</table>
+
+
+		<table class="basic_table" width="100%">
+			<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+		</table>
+
+
+        <table class="basic_table" width="100%" border="1">
+            <thead>
+                <tr>
+                    <th style="text-align:center;">${_("Internal Ref")}</th>
+                    <th style="text-align:center;">${_("Product Name")}</th>
+                    <th style="text-align:center;">${_("Serial Number")}</th>
+                    <th style="text-align:center;">${_("Stock on Hand")}</th>
+                    <th style="text-align:center;" >${_("UOM")}</th>
+                    <th style="text-align:center;" >${_("Internal Location")}</th>
+                    <th style="text-align:center;" >${_("Location")}</th>
+                </tr>
+            </thead>
+            %for line in (get_lines(o)):
+                <tbody >
+                
+                <tr>
+                    <td style="text-align:left;">
+                        ${line.get('ref') or ''}
+                     </td>
+                    <td style="text-align:left;">
+                        ${line.get('product_name') or ''}
+                    </td>
+                    <td style="text-align:left;"">
+                        ${line.get('serial_number') or ''}
+                    </td>
+                    <td style="text-align:right;">
+                        ${line.get('on_hand') or ''}
+                    </td>
+                    <td style="text-align:left;">
+                        ${line.get('uom') or ''}
+                    </td>
+                    <td style="text-align:left;">
+                        ${line.get('internal_location') or ''}
+                    </td>
+                    <td style="text-align:left;">
+                        ${line.get('location') or ''}
+                    </td>
+                </tr>
+                </tbody>
+            %endfor
+        </table>
+
+		<table class="basic_table" width="100%">
+			<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+		</table>
+
+
+        <table class="basic_table" width="50%">
+            <thead>
+                <tr>
+                	<th style="text-align:left;" >Total Per ${get_location(o)}</th>
+                </tr> 
+            </thead>
+        </table>
+
+
+        <table class="basic_table" width="50%" border="1">
+            <thead>
+                <tr>
+                    <th style="text-align:center;" >${_("Internal Location")}</th>
+                    <th style="text-align:center;" >${_("Total Quantity")}</th>
+                </tr>
+            </thead>
+            %for new in (get_total_lines(o)):
+                <tbody >
+                <tr>
+                     <td style="text-align:left;">
+                        ${new.get('internal_location') or ''}
+                    </td>
+                    <td style="text-align:left;">
+                        ${new.get('total') or ''}
+                    </td>
+                </tr>
+                </tbody>
+            %endfor
+        </table>
+
+        
+        <br><br>
+    %endfor
+</body>
+</html>

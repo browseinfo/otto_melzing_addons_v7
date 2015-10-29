@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <report auto="False"
+                id="report_account_pl"
+                model="accounting.report"
+                name="account.pl.extended"
+                rml="addons/profit_and_loss_report/report/account_profit_and_loss.rml"
+                string="Profit and Loss Extended"
+                usage="default"
+		menu="False"/>
+
+    </data>
+</openerp>

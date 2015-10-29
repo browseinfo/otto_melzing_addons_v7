@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data >
+        <record id="ir_property_webkit_stock_report" model="ir.property">
+            <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/>
+            <field eval="&quot;&quot;&quot;webkit_header_default&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;ir.header_webkit,1&quot;&quot;&quot;" name="value"/>
+        </record>
+
+        <!--div id="exq">
+                ${helper.embed_image("jpg",judicial.logo, width=100, height=100)}
+                <img src="" alt="" />
+        </div--> 
+
+        <record id="ir_header_webkit_base_stock_report" model="ir.header_webkit">
+            <field name="footer_html"></field>
+            <field eval="&quot;&quot;&quot;Portrait&quot;&quot;&quot;" name="orientation"/>
+            <field eval="&quot;&quot;&quot;A4&quot;&quot;&quot;" name="format"/>
+            <field name="html"></field>
+            <field eval="15.0" name="margin_top"/>
+            <field name="css" ><![CDATA[
+body {
+font-family:helvetica;
+font-size:9;
+}
+
+
+.dest_address {
+margin-left:60%;
+font-size:9;
+}
+.header {
+margin-left:0;
+text-align:left;
+width:300px;
+font-size:9;
+}
+
+.title {
+font-size:16;
+font-weight: bold;
+
+}
+
+
+.basic_table{
+text-align:center;
+border:1px solid lightGrey;
+border-collapse: collapse;
+}
+.basic_table td {
+border:1px solid lightGrey;
+font-size:9;
+
+
+}
+
+.list_table {
+border-color:black;
+text-align:center;
+border-collapse: collapse;
+
+}
+.list_table td {
+border-color:gray;
+border-top:1px solid gray;
+text-align:left;
+font-size:9;
+padding-right:3px
+padding-left:3px
+padding-top:3px
+padding-bottom:3px
+}
+
+.list_table th {
+border-color:gray;
+border-top:1px solid gray;
+text-align:left;
+font-size:9;
+padding-right:3px
+padding-left:3px
+padding-top:3px
+padding-bottom:3px
+}
+
+.list_tabe thead {
+    display:table-header-group;
+}
+
+
+.total {
+width:100%;
+}
+.lib {
+width:10.3%;
+}
+.tot {
+text-align:right;
+width:15%;
+}
+.lefttot {
+width:74%;
+}
+.tax {
+width:50%;
+} 
+]]> </field>
+            <field eval="&quot;&quot;&quot;Stock Report Sample&quot;&quot;&quot;" name="name"/>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="account_report_trial_balance_view_form" model="ir.ui.view">
+			<field name="name">Trail Balance</field>
+			<field name="model">account.balance.report</field>
+			<field name="inherit_id" ref="account.account_report_balance_view" />
+			<field name="arch" type="xml">
+			<xpath expr="//field[@name='target_move']" position="after">
+                <field name="currency_id" invisible="1"/>
+                <newline/>
+            </xpath>
+			<button name="check_report" position="after">
+				Or
+				<button icon="gtk-print" name="check_report_excel" string="Print Trial Balance" type="object" colspan="1" class="oe_highlight"/>
+			</button>
+             </field>
+		</record>
+		
+		
+	</data>
+</openerp>

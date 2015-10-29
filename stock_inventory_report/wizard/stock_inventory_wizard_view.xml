@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_stock_inventory_wizard_form" model="ir.ui.view">
+            <field name="name">stock.inventory.wizard.form</field>
+            <field name="model">stock.inventory.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="View Stock of Products" version="7.0">
+                	<group cols="4">
+                		<field name="type"/>
+                    </group>
+                    <group></group>
+                <footer>
+                    <button name="print_report" string="Print" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_stock_inventory" model="ir.actions.act_window">
+            <field name="name">Stock Invenrtory Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.inventory.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+      <menuitem id="menu_stock_inventory_report_parent" name="Reporting"
+          parent="stock.menu_stock_root"
+          groups="stock.group_stock_manager" sequence="13"/>
+   
+
+        <menuitem
+            name="Stock Invenrtory Report"
+            parent="menu_stock_inventory_report_parent"
+            action="action_stock_inventory"
+            sequence="18" 
+            id="menu_stock_inventory_report"
+           />
+           
+		<record id="view_stock_location_form1" model="ir.ui.view">
+			<field name="name">stock.location.extened.form1</field>
+			<field name="model">stock.location</field>
+			<field name="inherit_id" ref="stock.view_location_form"/>
+			<field name="arch" type="xml">
+				<field name="name" position="after">
+					<field name="print_report" invisible="1"/>
+				</field>
+			</field>
+		</record>
+
+   </data>
+</openerp>

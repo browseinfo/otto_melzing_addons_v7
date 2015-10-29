@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!--record id="trail_balance" model="ir.actions.report.xml">
+			<field name="name">Trail Balance</field>
+			<field name="type">ir.actions.report.xml</field>
+			<field name="model">account.account</field>
+			<field name="report_name">account_trail_balance_excel</field>
+			<field name="report_type">aeroo</field>
+			<field name="in_format">oo-ods</field>
+            <field name="out_format" ref="report_aeroo_ooo.report_mimetypes_pdf_ods"/>
+            <field name="content_fname">pdf</field>
+			<field name="parser_loc">general_ledger/report/report_trail_balance.py</field>
+			<field name="report_rml">general_ledger/report/account_balance.ods</field>
+			<field name="parser_state">loc</field>
+			<field name="tml_source">file</field>
+		</record>
+		<ir_set>
+			<field eval="'action'" name="key" />
+			<field eval="'client_print_multi'" name="key2" />
+			<field eval="['account.account']" name="models" />
+			<field name="name">trail_balance</field>
+			<field eval="'ir.actions.report.xml,'+str(trail_balance)"
+				name="value" />
+			<field eval="True" name="isobject" />
+			<field eval="True" name="replace" />
+		</ir_set-->
+    <report id="account_trial_balance_report"
+            string="Trial Balance"
+            model="account.account"
+            name="account.trial.balance.report"
+            rml="account_trial_balance/report/account_trial_balance.rml"
+            auto="False"/>
+
+	</data>
+</openerp>   

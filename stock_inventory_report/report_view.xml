@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+ <data>
+   <report id="stock_inventory_report_view_rml"
+           name="stock.inventory.all.rml"
+           auto="False"
+           model="stock.inventory.wizard"
+           file="stock_inventory_report/report/stock_inventory_report_all.rml"
+           string="Stock Inventory Report"
+           header="False"  
+	/>
+ </data>
+</openerp>
+ 
+
